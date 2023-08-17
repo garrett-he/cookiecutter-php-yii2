@@ -1,0 +1,39 @@
+{
+    "name": "{{ cookiecutter.project_vendor }}/{{ cookiecutter.project_name }}",
+    "description": "{{ cookiecutter.project_description }}",
+    "keywords": ["{{ cookiecutter.project_keywords.split(',')|join('", "') }}"],
+    "type": "project",
+    "prefer-stable": {{ cookiecutter.composer_prefer_stable }},
+    "license": "{{ cookiecutter.license_id }}",
+    "readme": "https://github.com/{{ cookiecutter.github_path }}/blob/main/README.md",
+    "homepage": "https://github.com/{{ cookiecutter.github_path }}",
+    "support": {
+        "issues": "https://github.com/{{ cookiecutter.github_path }}/issues",
+        "security": "https://github.com/{{ cookiecutter.github_path }}/security/policy"
+    },
+    "authors": [
+        {
+            "name": "{{ cookiecutter.author_name }}",
+            "email": "{{ cookiecutter.author_email }}"
+        }
+    ],
+    "scripts": {
+        "test": "./vendor/bin/phpunit"
+    },
+    "require": {
+        "php": "{{ cookiecutter.php_version }}"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "{{ cookiecutter.project_namespace.replace('\\', '\\\\') }}\\": "./src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "{{ cookiecutter.project_namespace.replace('\\', '\\\\') }}\\tests\\": "./tests/"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "cookiecutter-php-yii2"
+version = "0.1.0"
+description = "A Cookiecutter template for PHP projects with Yii2 framework."
+authors = ["Garrett HE <garrett.he@outlook.com>"]
+license = "BSD-3-Clause"
+readme = "README.md"
+homepage = "https://github.com/garrett-he/cookiecutter-php-yii2"
+repository = "https://github.com/garrett-he/cookiecutter-php-yii2.git"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.group.dev.dependencies]
+chance = "^0.110"
+pytest = "^8.1.1"
+pytest-cookies = "^0.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
