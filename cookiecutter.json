@@ -24,6 +24,12 @@
         "true",
         "false"
     ],
+    "with_db": [
+        "no",
+        "mysql",
+        "pgsql",
+        "sqlite"
+    ],
     "_copy_without_render": [
         ".github/workflows/ubuntu-jammy.yml"
     ]
