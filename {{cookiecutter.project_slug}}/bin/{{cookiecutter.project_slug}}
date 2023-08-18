@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+
+use yii\console\Application;
+use yii\helpers\Console;
+
+define('APP_HOME', realpath(__DIR__ . '/../'));
+
+defined('YII_DEBUG') or define('YII_DEBUG', getenv('PHP_ENV') === 'dev');
+defined('YII_ENV') or define('YII_ENV', YII_DEBUG ? 'dev' : 'prod');
+
+require_once APP_HOME . '/vendor/autoload.php';
+
+try {
+    $application = new Application(require(APP_HOME . '/config/console.php'));
+    exit($application->run());
+} catch (Exception $e) {
+    if (YII_DEBUG == 'dev') {
+        throw $e;
+    } else {
+        Console::error("Error: {$e->getMessage()}");
+    }
+}
